@@ -14,6 +14,6 @@ describe('Bubble Sort', () => {
     let arrayBubbleSort = utils.bubbleSort(messArray);    
     assert.deepEqual(arrayBubbleSort, sortArray);
     
-    console.log(`messArray: ${messArray} & arrayBubbleSort: ${arrayBubbleSort}`);
+    //console.log(`messArray: ${messArray} & arrayBubbleSort: ${arrayBubbleSort}`);
   });
 });

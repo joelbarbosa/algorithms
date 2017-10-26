@@ -14,7 +14,7 @@ describe('arrays_utils', () => {
     it('#messArrays() should mess array', () => {
       let messArray = utils.messArray(orderArray);
       assert.notDeepEqual(messArray, orderArray);
-      console.log(`array: ${orderArray} & messArray: ${messArray}`);
+      //console.log(`array: ${orderArray} & messArray: ${messArray}`);
     });
   });
 });
