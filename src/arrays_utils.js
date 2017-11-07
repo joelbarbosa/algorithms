@@ -1,6 +1,3 @@
-/**
- * this module will help you with generic issue.
- */
 module.exports = {
  
  /**

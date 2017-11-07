@@ -2,7 +2,8 @@ import assert from 'assert';
 import { 
   getLast,
   anaGramCheckOff,
-  anagramSortAndCompare 
+  anagramSortAndCompare,
+  anagramCountCompare 
 } from '../src/big_o';
 
 describe('bigO', () => {
@@ -32,5 +33,14 @@ describe('bigO', () => {
 
     assert.equal(anagramSortAndCompare(s1, s2), true);
     assert.equal(anagramSortAndCompare(s1, s3), false);
+  })
+
+  it('bigO O(n) anagramCountCompare', () => {
+    const s1 = 'apple';
+    const s2 = 'pleap';
+    const s3 = 'applf';
+
+    assert.equal(anagramCountCompare(s1, s2), true);
+    assert.equal(anagramCountCompare(s1, s3), false);
   })
 });

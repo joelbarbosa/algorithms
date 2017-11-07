@@ -61,8 +61,44 @@ const anagramSortAndCompare = (s1, s2) => {
   return true;
 }
 
+const getLetterPosition = (letter) => {
+  return letter.charCodeAt() - 'a'.charCodeAt();
+}
+
+/**
+ * Here we have T(n) = 2n + 26 steps. So we have
+ * O(n) We have found a linear order.
+ * But this algorithm sacrificed space in order to gain time.
+ * @param {*} s1 
+ * @param {*} s2 
+ */
+const anagramCountCompare = (s1, s2) => {
+  const alphabetTotal = 26;
+  const s1LetterCounts = new Array(alphabetTotal).fill(0);
+  const s2LetterCounts = new Array(alphabetTotal).fill(0);
+
+  for (let i = 0; i < s1.length; i++) {
+    const letterPosition = getLetterPosition(s1[i]);
+    s1LetterCounts[letterPosition]++;
+  }
+
+  for (let i = 0; i < s2.length; i++) {
+    const letterPosition = getLetterPosition(s2[i]);
+    s2LetterCounts[letterPosition]++;
+  }
+
+  for (let i = 0; i < s1LetterCounts.length; i++) {
+    if (s1LetterCounts[i] !== s2LetterCounts[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 export {
   getLast,
   anaGramCheckOff,
-  anagramSortAndCompare
+  anagramSortAndCompare,
+  anagramCountCompare
 }
