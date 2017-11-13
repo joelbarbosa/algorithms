@@ -17,7 +17,11 @@ module.exports = {
          i -= 1;
       }           
     }
-
+    
+    // brutal force
+    if (arrayMess === array) {
+      return messArray(array);
+    }
     return arrayMess;
   },
   
